@@ -1,3 +1,21 @@
+from flask import render_template
+from flask import Flask, request, send_file, render_template
+import pandas as pd
+from playwright.sync_api import sync_playwright
+import tempfile
+import os
+import time
+
+app = Flask(__name__)
+
+# ✅ This is the code that serves the homepage
+@app.route('/', methods=['GET'])
+def index():
+    return render_template('index.html')
+
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    ...
 
 from flask import Flask, request, send_file, render_template
 import pandas as pd
